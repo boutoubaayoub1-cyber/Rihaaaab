@@ -16,9 +16,9 @@ body {
   inset: 0;
   overflow: hidden;
   background: radial-gradient(
-    ellipse at center,
-    #260817 0%,
-    #10030d 55%,
+    circle,
+    #29091c 0%,
+    #10030d 65%,
     #050005 100%
   );
 }
@@ -31,16 +31,16 @@ body {
 
 .word {
   position: absolute;
+  display: block;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   font-family: Arial, sans-serif;
   font-size: 8px;
-  font-weight: bold;
-  color: #ff4778;
+  line-height: 1;
+  color: #ff4568;
   opacity: 0;
+  text-shadow: 0 0 5px rgba(255, 35, 85, 0.6);
   pointer-events: none;
-  text-shadow: 0 0 6px rgba(255, 45, 110, 0.7);
-  will-change: opacity, color, text-shadow;
 }
 
 #decorations {
@@ -51,27 +51,10 @@ body {
   pointer-events: none;
 }
 
-#message {
-  position: absolute;
-  bottom: 7%;
-  left: 0;
-  width: 100%;
-  z-index: 4;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  color: #ff9bb8;
-  text-shadow: 0 0 12px #ff2872;
-  animation: messageGlow 2s ease-in-out infinite alternate;
-}
-
 .particle {
   position: absolute;
   bottom: -30px;
-  color: #ff6b9d;
-  opacity: 0;
+  color: #ff6b91;
   text-shadow: 0 0 10px #ff1744;
   animation: floatUp linear infinite;
 }
@@ -79,47 +62,34 @@ body {
 .sparkle {
   position: absolute;
   color: white;
-  font-size: 12px;
-  opacity: 0;
   text-shadow: 0 0 8px white, 0 0 16px #ff6b91;
   animation: twinkle ease-in-out infinite alternate;
 }
 
 @keyframes floatUp {
   0% {
-    transform: translateY(0) rotate(0deg) scale(.7);
+    transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
   15% {
-    opacity: .8;
+    opacity: 0.8;
   }
   85% {
-    opacity: .7;
+    opacity: 0.7;
   }
   100% {
-    transform: translateY(-110vh) rotate(360deg) scale(1.2);
+    transform: translateY(-110vh) rotate(360deg);
     opacity: 0;
   }
 }
 
 @keyframes twinkle {
   from {
-    opacity: .15;
-    transform: scale(.6);
+    opacity: 0.15;
+    transform: scale(0.6);
   }
   to {
     opacity: 1;
     transform: scale(1.3);
-  }
-}
-
-@keyframes messageGlow {
-  from {
-    opacity: .7;
-    text-shadow: 0 0 6px #ff2872;
-  }
-  to {
-    opacity: 1;
-    text-shadow: 0 0 18px #ff2872;
   }
 }
