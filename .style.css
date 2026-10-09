@@ -1,0 +1,68 @@
+.word {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #ff4568;
+  text-shadow: 0 0 5px rgba(255, 35, 85, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, color;
+}
+
+#decorations {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.particle {
+  position: absolute;
+  bottom: -30px;
+  color: #ff6b91;
+  opacity: 0;
+  animation: floatUp linear infinite;
+  text-shadow: 0 0 10px #ff1744;
+}
+
+.sparkle {
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  opacity: 0;
+  animation: twinkle 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 8px white, 0 0 16px #ff6b91;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: .75;
+  }
+  85% {
+    opacity: .65;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: .1;
+    transform: scale(.6);
+  }
+  100% {
+    opacity: .9;
+    transform: scale(1.3);
+  }
+}
