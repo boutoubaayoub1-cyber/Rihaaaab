@@ -1,3 +1,4 @@
+alert("JavaScript works!");
 const heart = document.getElementById("heart");
 const decorations = document.getElementById("decorations");
 
